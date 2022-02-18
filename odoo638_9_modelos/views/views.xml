@@ -1,0 +1,95 @@
+<odoo>
+  <data>
+<!-- Vistas de camiones-->
+
+    <record model="ir.ui.view" id="odoo638_9_modelos.camiones638_list_view">
+      <field name="name">odoo638_9_modelos.camiones638.view.tree</field>
+      <field name="model">odoo638_9_modelos.camiones638</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="marca"/>
+          <field name="modelo"/>
+          <field name="conductors_ids"/>
+          <field name="remolques_ids"/>
+        </tree>
+      </field>
+    </record>
+
+<!-- search -->
+
+    <record model="ir.ui.view" id="odoo638_9_modelos.camiones638_search_view">
+      <field name="name">odoo638_9_modelos.camiones638.view.search</field>
+      <field name="model">odoo638_9_modelos.camiones638</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="name"/>
+          <field name="marca"/>
+          <field name="modelo"/>
+          <field name="conductors_ids"/>
+          <field name="remolques_ids"/>
+          <group>
+            <filter name="group_by_Marca" string="Marca" context="{'gropup_by':'Marca'}" />
+          </group>
+        </search>
+      </field>
+    </record>
+
+    
+    <!-- form -->
+    
+    <record model="ir.ui.view" id="odoo638_9_modelos.camiones638_form_view">
+      <field name="name">odoo638_9_modelos.camiones638.view.form</field>
+      <field name="model">odoo638_9_modelos.camiones638</field>
+      <field name="arch" type="xml">
+        <form string="Información camiones">
+          <sheet>
+            <div class="oe_title">
+              <h1>
+                MATRICULA <field name="name" placeholder="matricula"/>
+              </h1>
+            </div>
+            <group>
+              <group>
+                <separator string="Datos"/>
+                <field name="marca" placeholder="marca"/>
+                <field name="modelo" placeholder="modelo"/>
+                <field name="conductors_ids"/>
+                <field name="remolques_ids"/>
+              </group>
+            </group>
+          </sheet>
+        </form>
+      </field>
+
+    </record>
+
+
+
+
+
+
+
+
+    <!-- Definición de menús-->
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="odoo638_9_modelos.camiones638_action_window">
+      <field name="name">camiones638</field>
+      <field name="res_model">odoo638_9_modelos.camiones638</field>
+      
+    </record>
+    <record model="ir.actions.act_window" id="odoo638_9_modelos.semirremolques638_action_window">
+      <field name="name">semirremolques638</field>
+      <field name="res_model">odoo638_9_modelos.semirremolques638</field>
+      
+    </record>
+
+    <menuitem name="Camiones" id="odoo638_9_modelos.menu_camiones638" parent="odoo638_9_modelos.menu_root"/>
+    <menuitem name="Camiones" id="odoo638_9_modelos.menu_camiones638_list" parent="odoo638_9_modelos.menu_camiones638"
+              action="odoo638_9_modelos.camiones638_action_window"/>
+    <menuitem name="Remolques" id="odoo638_9_modelos.menu_semirremolques638" parent="odoo638_9_modelos.menu_camiones638"
+              action="odoo638_9_modelos.semirremolques638_action_window"/>
+  </data>
+</odoo>

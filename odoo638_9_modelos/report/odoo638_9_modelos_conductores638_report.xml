@@ -1,0 +1,29 @@
+<odoo>
+    <record id="odoo638_9_modelos.conductores638_report" model="ir.actions.report">
+        <field name="name"> Informe de tractores</field>
+        <field name="model">odoo638_9_modelos.conductores638</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">odoo638_9_modelos.conductores638_report_view</field>
+        <field name="report_file">odoo638_9_modelos.conductores638_report</field>
+        <field name="binding_model_id" ref="model_odoo638_9_modelos_conductores638"/>
+        <field name="binding_type">report</field>
+
+    </record>
+
+    <template id="conductores638_report_view">
+        <t t-call="web.html_container">
+            <!-- muestra datos de la empresa (salta página) -->
+            <t t-call="web.external_layout">
+                <h1>Conductores </h1><br />
+                <t t-foreach="docs" t-as="conductores638">
+                    <ul>
+                        <li>    Matricula <span t-field="conductores638.name" /></li>
+                        <li>    nombre <span t-field="conductores638.nombre" /></li>
+
+                    </ul>
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>

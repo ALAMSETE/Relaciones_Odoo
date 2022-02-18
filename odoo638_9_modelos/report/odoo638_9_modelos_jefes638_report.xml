@@ -1,0 +1,29 @@
+<odoo>
+    <record id="odoo638_9_modelos.jefes638_report" model="ir.actions.report">
+        <field name="name"> Informe de coches</field>
+        <field name="model">odoo638_9_modelos.jefes638</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">odoo638_9_modelos.jefes638_report_view</field>
+        <field name="report_file">odoo638_9_modelos.jefes638_report</field>
+        <field name="binding_model_id" ref="model_odoo638_9_modelos_jefes638"/>
+        <field name="binding_type">report</field>
+
+    </record>
+
+    <template id="jefes638_report_view">
+        <t t-call="web.html_container">
+            <!-- muestra datos de la empresa (salta página) -->
+            <t t-call="web.external_layout">
+                <h1>Jefes </h1><br />
+                <t t-foreach="docs" t-as="jefes638">
+                    <ul>
+                        <li>    Matricula <span t-field="jefes638.name" /></li>
+                        <li>    nombre <span t-field="jefes638.nombre" /></li>
+
+                    </ul>
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>

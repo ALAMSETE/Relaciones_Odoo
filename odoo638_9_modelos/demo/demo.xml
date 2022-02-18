@@ -1,0 +1,66 @@
+<odoo>
+    <data>
+<!--
+          <record id="object0" model="odoo638_9_modelos.odoo638_9_modelos">
+            <field name="name">Object 0</field>
+            <field name="value">0</field>
+          </record>
+
+          <record id="object1" model="odoo638_9_modelos.odoo638_9_modelos">
+            <field name="name">Object 1</field>
+            <field name="value">10</field>
+          </record>
+
+          <record id="object2" model="odoo638_9_modelos.odoo638_9_modelos">
+            <field name="name">Object 2</field>
+            <field name="value">20</field>
+          </record>
+
+          <record id="object3" model="odoo638_9_modelos.odoo638_9_modelos">
+            <field name="name">Object 3</field>
+            <field name="value">30</field>
+          </record>
+
+          <record id="object4" model="odoo638_9_modelos.odoo638_9_modelos">
+            <field name="name">Object 4</field>
+            <field name="value">40</field>
+          </record>
+-->
+<record id='camion1' model='odoo638_9_modelos.camiones638'>
+    <field name='name'>12345abc</field>
+    <field name='marca'>Scania</field>
+    <field name='modelo'>R570</field>
+</record>
+
+<record id="camion2" model="odoo638_9_modelos.camiones638">
+    <field name="name">12345abd</field>
+    <field name="marca">Volvo</field>
+    <field name="modelo">750</field>
+</record>
+
+<record id="jefe1" model="odoo638_9_modelos.jefes638">
+    <field name="name">11111111A</field>
+    <field name="nombre">Pepe</field>
+
+</record>
+
+<record id="jefe2" model="odoo638_9_modelos.jefes638">
+    <field name="name">11111112A</field>
+    <field name="nombre">Edu</field>
+
+</record>
+
+<record id="conductor1" model="odoo638_9_modelos.conductores638">
+    <field name="name">11111113A</field>
+    <field name="nombre">Antonio</field>
+
+</record>
+
+<record id="conductor2" model="odoo638_9_modelos.conductores638">
+    <field name="name">1111114A</field>
+    <field name="nombre">Luis</field>
+
+</record>
+
+    </data>
+</odoo>

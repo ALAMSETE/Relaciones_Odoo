@@ -1,0 +1,141 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+<!--
+    <record model="ir.ui.view" id="odoo638_9_modelos.list">
+      <field name="name">odoo638_9_modelos list</field>
+      <field name="model">odoo638_9_modelos.odoo638_9_modelos</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+-->
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="odoo638_9_modelos.action_window">
+      <field name="name">odoo638_9_modelos window</field>
+      <field name="res_model">odoo638_9_modelos.odoo638_9_modelos</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="odoo638_9_modelos.action_server">
+      <field name="name">odoo638_9_modelos server</field>
+      <field name="model_id" ref="model_odoo638_9_modelos_odoo638_9_modelos"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="odoo638_9_modelos" id="odoo638_9_modelos.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="odoo638_9_modelos.menu_1" parent="odoo638_9_modelos.menu_root"/>
+    <menuitem name="Menu 2" id="odoo638_9_modelos.menu_2" parent="odoo638_9_modelos.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="odoo638_9_modelos.menu_1_list" parent="odoo638_9_modelos.menu_1"
+              action="odoo638_9_modelos.action_window"/>
+    <menuitem name="Server to list" id="odoo638_9_modelos" parent="odoo638_9_modelos.menu_2"
+              action="odoo638_9_modelos.action_server"/>
+-->
+
+
+<!-- Vistas de jefes-->
+
+    <record model="ir.ui.view" id="odoo638_9_modelos.jefes638_list_view">
+      <field name="name">odoo638_9_modelos.jefes638.view.tree</field>
+      <field name="model">odoo638_9_modelos.jefes638</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="nombre"/>
+          <field name="conductores_ids"/>
+        </tree>
+      </field>
+    </record>
+
+<!-- search -->
+
+    <record model="ir.ui.view" id="odoo638_9_modelos.jefes638_search_view">
+      <field name="name">odoo638_9_modelos.jefes638.view.search</field>
+      <field name="model">odoo638_9_modelos.jefes638</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="name"/>
+          <field name="nombre"/>
+          <field name="conductores_ids"/>
+          <group>
+            <filter name="group_by_Nombre" string="Nombre" context="{'gropup_by':'Nombre'}" />
+          </group>
+        </search>
+      </field>
+    </record>
+
+    
+    <!-- form -->
+    
+    <record model="ir.ui.view" id="odoo638_9_modelos.jefes638_form_view">
+      <field name="name">odoo638_9_modelos.jefes638.view.form</field>
+      <field name="model">odoo638_9_modelos.jefes638</field>
+      <field name="arch" type="xml">
+        <form string="Información Jefes">
+          <sheet>
+            <div class="oe_title">
+              <h1>
+                DNI <field name="name" placeholder="DNI"/>
+              </h1>
+            </div>
+            <group>
+              <group>
+                <separator string="Datos"/>
+                <field name="nombre" placeholder="nombre"/>
+                <field name="conductores_ids"/>
+               
+              </group>
+            </group>
+          </sheet>
+        </form>
+      </field>
+
+    </record>
+
+
+
+
+
+
+
+
+    <!-- Definición de menús-->
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="odoo638_9_modelos.jefes638_action_window">
+      <field name="name">jefes638</field>
+      <field name="res_model">odoo638_9_modelos.jefes638</field>
+      
+    </record>
+
+    <menuitem name="Jefes" id="odoo638_9_modelos.menu_jefes638" parent="odoo638_9_modelos.menu_root"/>
+    <menuitem name="Lista" id="odoo638_9_modelos.menu_jefes638_list" parent="odoo638_9_modelos.menu_jefes638"
+              action="odoo638_9_modelos.jefes638_action_window"/>
+  </data>
+</odoo>

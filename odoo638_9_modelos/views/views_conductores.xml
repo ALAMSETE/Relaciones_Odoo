@@ -1,0 +1,87 @@
+<odoo>
+  <data>
+
+<!-- Vistas de conductores-->
+
+    <record model="ir.ui.view" id="odoo638_9_modelos.conductores638_list_view">
+      <field name="name">odoo638_9_modelos.conductores638.view.tree</field>
+      <field name="model">odoo638_9_modelos.conductores638</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="nombre"/>
+          <field name="jefe_id"/>
+          <field name="camion_id"/>
+        </tree>
+      </field>
+    </record>
+
+<!-- search -->
+
+    <record model="ir.ui.view" id="odoo638_9_modelos.conductores638_search_view">
+      <field name="name">odoo638_9_modelos.conductores638.view.search</field>
+      <field name="model">odoo638_9_modelos.conductores638</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="name"/>
+          <field name="nombre"/>
+          <field name="jefe_id"/>
+          <field name="camion_id"/>
+          <group>
+            <filter name="group_by_Nombre" string="Nombre" context="{'gropup_by':'Nombre'}" />
+          </group>
+        </search>
+      </field>
+    </record>
+
+    
+    <!-- form -->
+    
+    <record model="ir.ui.view" id="odoo638_9_modelos.conductores638_form_view">
+      <field name="name">odoo638_9_modelos.conductores638.view.form</field>
+      <field name="model">odoo638_9_modelos.conductores638</field>
+      <field name="arch" type="xml">
+        <form string="Información Conductores">
+          <sheet>
+            <div class="oe_title">
+              <h1>
+                DNI <field name="name" placeholder="DNI"/>
+              </h1>
+            </div>
+            <group>
+              <group>
+                <separator string="Datos"/>
+                <field name="nombre" placeholder="nombre"/>
+                <field name="jefe_id"/>
+                <field name="camion_id"/>
+              </group>
+            </group>
+          </sheet>
+        </form>
+      </field>
+
+    </record>
+
+
+
+
+
+
+
+
+    <!-- Definición de menús-->
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="odoo638_9_modelos.conductores638_action_window">
+      <field name="name">conductores638</field>
+      <field name="res_model">odoo638_9_modelos.conductores638</field>
+      
+    </record>
+
+    <menuitem name="odoo638_9_modelos" id="odoo638_9_modelos.menu_root"/>
+    <menuitem name="Conductores" id="odoo638_9_modelos.menu_conductores638" parent="odoo638_9_modelos.menu_root"/>
+    <menuitem name="Lista" id="odoo638_9_modelos.menu_conductores638_list" parent="odoo638_9_modelos.menu_conductores638"
+              action="odoo638_9_modelos.conductores638_action_window"/>
+  </data>
+</odoo>
